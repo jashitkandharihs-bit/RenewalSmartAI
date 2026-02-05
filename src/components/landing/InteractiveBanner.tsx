@@ -113,7 +113,7 @@ const InteractiveBanner = () => {
               </div>
 
             {/* Bottom status pill */}
-            <motion.div
+            {/*<motion.div
               className="absolute bottom-4 left-4 right-4 md:left-6 md:right-6 rounded-2xl bg-background/90 backdrop-blur-md border border-border/60 px-4 py-3 flex flex-wrap items-center justify-between gap-3"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const InteractiveBanner = () => {
                   Live renewal workspace
                 </span>
               </div>
-            </motion.div>
+            </motion.div>*/}
           </div>
 
           {/* Top-right floating buttons panel */}
