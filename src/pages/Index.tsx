@@ -1,7 +1,6 @@
 import Header from "@/components/landing/Header";
 import HeroSection from "@/components/landing/HeroSection";
 import InteractiveBanner from "@/components/landing/InteractiveBanner";
-import ExploreSection from "@/components/landing/ExploreSection";
 import StepsSection from "@/components/landing/StepsSection";
 import StatsSection from "@/components/landing/StatsSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
@@ -19,7 +18,6 @@ const Index = () => {
       <main>
         <HeroSection />
         <InteractiveBanner />
-        {/* <ExploreSection /> */}
         <StepsSection />
         <StatsSection />
         <FeaturesSection />
