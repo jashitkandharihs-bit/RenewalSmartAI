@@ -1,71 +1,53 @@
 import { motion } from "framer-motion";
-import { Users, Mail, Clock, Target } from "lucide-react";
+import { Bell, CheckCircle, Heart } from "lucide-react";
 
-const capabilities = [
-  {
-    icon: Users,
-    title: "Agents, that work with you",
-    description: "AI agents that collaborate with your team, not replace them",
-  },
-  {
-    icon: Mail,
-    title: "Automated Outreach",
-    description: "Personalized communications sent at the perfect time",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Monitoring",
-    description: "Never miss a renewal deadline again",
-  },
-  {
-    icon: Target,
-    title: "Revenue Focused",
-    description: "Every action optimized for maximum renewal rates",
-  },
+const benefits = [
+  { icon: Bell, label: "Never miss a renewal" },
+  { icon: CheckCircle, label: "Approve, don't write" },
+  { icon: Heart, label: "Save your best customers first" },
 ];
 
 const TeamSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
-            A Renewal System your
-            <br />
-            <span className="text-gradient">Office Team Can Run</span>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
+            A Renewal System your Office Team Can Run
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Renewals Smart AI turns your renewal team into a repeatable workflow. Excel,
-            drive existing systems to use at the right customers, with the right message,
-            at the right time to drive sales without customization.
+          <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
+            Renewals Copilot AI turns your renewal season into a repeatable workflow: track
+            every expiring contract, focus on the right customers, and send the right message
+            at the right time—without full automation.
+          </p>
+
+          {/* Benefit pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-soft"
+              >
+                <benefit.icon className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-foreground">{benefit.label}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-muted-foreground text-sm">
+            Renew more service contracts, without chasing people in Excel.
           </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {capabilities.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="bg-card rounded-2xl p-6 shadow-card border border-border h-full hover:shadow-elevated hover:border-primary/20 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

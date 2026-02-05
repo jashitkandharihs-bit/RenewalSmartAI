@@ -1,26 +1,30 @@
 import { motion } from "framer-motion";
-import { Upload, FileSpreadsheet, Zap, CheckCircle } from "lucide-react";
+import { Upload, BarChart3, Lightbulb, FileEdit } from "lucide-react";
 
 const steps = [
   {
     icon: Upload,
+    number: "1",
     title: "Upload Data",
-    description: "Upload your renewal data or connect your existing system",
+    description: "Drop your CSV/Excel file with renewal data",
   },
   {
-    icon: FileSpreadsheet,
+    icon: BarChart3,
+    number: "2",
     title: "System Analyzes",
-    description: "AI analyzes patterns and identifies renewal opportunities",
+    description: "AI identifies risk levels and opportunities",
   },
   {
-    icon: Zap,
-    title: "Automatic Integration",
-    description: "Seamlessly integrates with your workflow tools",
+    icon: Lightbulb,
+    number: "3",
+    title: "Renewal Insights",
+    description: "Get actionable insights for each customer",
   },
   {
-    icon: CheckCircle,
-    title: "Smart Outreach",
-    description: "Automated, personalized communication at scale",
+    icon: FileEdit,
+    number: "4",
+    title: "Smart Draft",
+    description: "AI drafts personalized renewal emails",
   },
 ];
 
@@ -43,7 +47,7 @@ const StepsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -53,17 +57,19 @@ const StepsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="bg-card rounded-2xl p-6 shadow-card border border-border hover:shadow-elevated transition-shadow duration-300 h-full">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <step.icon className="w-7 h-7 text-primary" />
+              <div className="bg-card rounded-2xl p-6 shadow-card border border-border hover:shadow-elevated transition-shadow duration-300 h-full text-center">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mx-auto mb-4">
+                  <step.icon className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">{step.description}</p>
+                <div className="text-sm text-muted-foreground mb-1">{step.number}. {step.title}</div>
+                <p className="text-muted-foreground text-xs">{step.description}</p>
               </div>
-              
-              {/* Connector line */}
+
+              {/* Connector arrow */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 border-t-2 border-dashed border-border" />
+                <div className="hidden lg:flex absolute top-1/2 -right-3 transform -translate-y-1/2 text-border">
+                  →
+                </div>
               )}
             </motion.div>
           ))}

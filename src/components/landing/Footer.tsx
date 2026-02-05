@@ -1,63 +1,76 @@
-const footerLinks = {
-  Product: ["Features", "Pricing", "Integrations", "Changelog"],
-  Company: ["About", "Blog", "Careers", "Contact"],
-  Resources: ["Documentation", "Help Center", "API Reference", "Status"],
-  Legal: ["Privacy", "Terms", "Security", "GDPR"],
-};
+import { Linkedin, Youtube, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-primary-foreground py-16">
+    <footer className="bg-foreground text-primary-foreground py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Logo and tagline */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">R</span>
-              </div>
-              <span className="font-bold text-lg">Renewals Smart AI</span>
-            </div>
-            <p className="text-primary-foreground/70 text-sm">
-              AI-powered renewal management for modern field service teams.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Left side - Branding */}
+          <div>
+            <p className="text-primary-foreground/80 text-sm mb-1">
+              A Platform by <span className="font-semibold">Helios Solutions</span>
+            </p>
+            <a
+              href="https://www.heliossolutions.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 text-sm transition-colors"
+            >
+              www.heliossolutions.co
+            </a>
+            <p className="text-primary-foreground/60 text-xs mt-2">
+              Helping companies achieve more.
             </p>
           </div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="font-semibold mb-4">{category}</h4>
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {/* Right side - Locations & Social */}
+          <div className="flex flex-col md:flex-row md:items-start md:justify-end gap-6">
+            <div className="text-sm">
+              <p className="text-primary-foreground/80 mb-1">
+                <span className="font-medium">Europe :</span>{" "}
+                <span className="text-primary-foreground/60">Germany | Benelux | Switzerland | Finland</span>
+              </p>
+              <p className="text-primary-foreground/80 mb-1">
+                <span className="font-medium">United States :</span>{" "}
+                <span className="text-primary-foreground/60">Seattle</span>
+              </p>
+              <p className="text-primary-foreground/80">
+                <span className="font-medium">India :</span>{" "}
+                <span className="text-primary-foreground/60">Vadodara</span>
+              </p>
             </div>
-          ))}
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-primary-foreground" />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+              >
+                <Youtube className="w-4 h-4 text-primary-foreground" />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+              >
+                <Instagram className="w-4 h-4 text-primary-foreground" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/60 text-sm">
-            © 2024 Renewals Smart AI. All rights reserved.
+        <div className="border-t border-primary-foreground/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/50 text-xs">
+            Powered by Helios Solutions
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">
-              Twitter
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">
-              LinkedIn
-            </a>
-            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">
-              GitHub
-            </a>
-          </div>
+          <p className="text-primary-foreground/50 text-xs">
+            Copyright@HeliosSolutions2025
+          </p>
         </div>
       </div>
     </footer>

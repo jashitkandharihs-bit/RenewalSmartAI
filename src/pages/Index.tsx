@@ -1,6 +1,5 @@
 import Header from "@/components/landing/Header";
 import HeroSection from "@/components/landing/HeroSection";
-import InteractiveBanner from "@/components/landing/InteractiveBanner";
 import StepsSection from "@/components/landing/StepsSection";
 import StatsSection from "@/components/landing/StatsSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
@@ -8,7 +7,6 @@ import DifferentiatorSection from "@/components/landing/DifferentiatorSection";
 import IntegrationsSection from "@/components/landing/IntegrationsSection";
 import WorkflowSection from "@/components/landing/WorkflowSection";
 import TeamSection from "@/components/landing/TeamSection";
-import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -17,7 +15,6 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <InteractiveBanner />
         <StepsSection />
         <StatsSection />
         <FeaturesSection />
@@ -25,7 +22,6 @@ const Index = () => {
         <IntegrationsSection />
         <WorkflowSection />
         <TeamSection />
-        <CTASection />
       </main>
       <Footer />
     </div>

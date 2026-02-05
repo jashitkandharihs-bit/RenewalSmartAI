@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
@@ -25,26 +25,23 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-            Features
+          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            Home
           </a>
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-            How it Works
+          <a href="#modules" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            Modules
           </a>
-          <a href="#integrations" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-            Integrations
+          <a href="#faqs" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            FAQs
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-            Pricing
+          <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+            Contact
           </a>
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" className="text-foreground font-medium">
-            Log in
-          </Button>
+        <div className="hidden md:flex items-center">
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 shadow-glow">
-            Get Started
+            Book a Demo
           </Button>
         </div>
 
@@ -55,7 +52,7 @@ const Header = () => {
           className="md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          <Menu className="h-6 w-6" />
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
       </div>
 
@@ -67,12 +64,12 @@ const Header = () => {
           className="md:hidden border-t border-border bg-background"
         >
           <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
-            <a href="#features" className="text-foreground font-medium py-2">Features</a>
-            <a href="#how-it-works" className="text-foreground font-medium py-2">How it Works</a>
-            <a href="#integrations" className="text-foreground font-medium py-2">Integrations</a>
-            <a href="#pricing" className="text-foreground font-medium py-2">Pricing</a>
+            <a href="#" className="text-foreground font-medium py-2">Home</a>
+            <a href="#modules" className="text-foreground font-medium py-2">Modules</a>
+            <a href="#faqs" className="text-foreground font-medium py-2">FAQs</a>
+            <a href="#contact" className="text-foreground font-medium py-2">Contact</a>
             <Button className="bg-primary text-primary-foreground w-full mt-2">
-              Get Started
+              Book a Demo
             </Button>
           </nav>
         </motion.div>
