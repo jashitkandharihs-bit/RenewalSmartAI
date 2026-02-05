@@ -58,7 +58,7 @@ const WorkflowSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-card rounded-2xl shadow-elevated border border-border p-6">
+            {/*<div className="bg-card rounded-2xl shadow-elevated border border-border p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                   <span className="text-primary-foreground font-bold">R</span>
@@ -69,7 +69,7 @@ const WorkflowSection = () => {
                 </div>
               </div>
 
-              {/* Pipeline visualization */}
+              Pipeline visualization
               <div className="space-y-3">
                 {[
                   { stage: "Discovery", count: 12, colorClass: "bg-primary/80", width: "w-full" },
@@ -94,9 +94,9 @@ const WorkflowSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div>*/}
 
-            {/* Floating notification */}
+            {/*Floating notification 
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -106,7 +106,7 @@ const WorkflowSection = () => {
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-medium text-foreground">3 renewals closing today</span>
               </div>
-            </motion.div>
+            </motion.div>*/}
           </motion.div>
         </div>
       </div>
