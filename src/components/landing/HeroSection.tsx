@@ -22,14 +22,6 @@ const HeroSection = () => {
             </h1>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
-          >
-          </motion.p>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,8 +54,6 @@ const HeroSection = () => {
             No credit card required • Free trial available
           </motion.p>
         </div>
-
-        {/* Hero Image/Dashboard Preview */}
 
       </div>
     </section>
