@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const footerLinks = {
   Product: ["Features", "Pricing", "Integrations", "Changelog"],
   Company: ["About", "Blog", "Careers", "Contact"],
